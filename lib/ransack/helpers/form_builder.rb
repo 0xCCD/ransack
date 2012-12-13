@@ -156,7 +156,7 @@ module Ransack
           obj.map do |key, value|
             case value
             when Array, Hash
-              association_array(value, key.to_s)
+              [key]+association_array(value, key.to_s)
             else
               [key.to_s, [key, value].join('_')]
             end
